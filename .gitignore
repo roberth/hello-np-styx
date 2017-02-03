@@ -1,0 +1,4 @@
+.styx/
+.nix-project-cache/
+cabal.sandbox.config
+dist/

@@ -1,0 +1,27 @@
+
+# List first the packages that you edit locally and want compiled "all the time", by cabal:
+local-packages:
+  my-main-package: # package name
+    location: .    # location on your disk
+
+# If you want you can add other haskell nix packages to depend on.
+# Normally this is not necessary, because nix will track the dependencies on its own.
+# Thus this section is mostly useful for throw-away projects which do not have a cabal file.
+nix-deps:
+    - criterion
+    - gasp
+    - lens
+    - statistics
+
+# In case you depend on other non-haskell tools or libs.
+non-haskell-deps:
+    - z3
+
+# Optionally, one can ask for a specific version of nixpkgs:
+#nixpkgs:
+#  commit: 8ef3eaeb4e531929ec29a880cb4c67f790e5eb70
+#  sha256: 1v9lgk3j394i91qz1h7cv6mbg6xkdllfccc902ydb1gvp6bzmh6z
+#  # or like this: url: https://github.com/NixOS/nixpkgs-channels/archive/nixos-14.12.tar.gz
+
+# Optionally, one can ask for a specific version of ghc known by nixpkgs
+default-compiler: ghc801
